@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Add Expense</title>
+   <style>
+      * {
+         padding: 0;
+         margin: 0;
+      }
+      .head {
+         display: flex;
+         justify-content: center;
+         background: rgb(190, 130, 218);
+         border-bottom: solid grey 1px;
+         font-size:100px;
+         padding:20px;
+      }
+      main {
+         background: rgb(201, 156, 222);
+         height: 75%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+      .container {
+         background: rgba(255,255,255,0.25);
+         border-radius: 15px;
+         width:30%;
+         padding: 30px 50px;
+         justify-content: center;
+         align-items: center;
+      }
+      .container form input {
+         margin: 10 0 10 0;
+      }
+      .container form label{
+         font-size: 24px;
+         justify-content: center;
+         align-items: center;
+      }
+      .container form input, .container form select{
+         font-size: 18px;
+         padding:5px;
+         width:100%;
+         justify-content: center;
+         align-items: center;
+      }
+      form button {
+         padding: 5 10;
+         margin: 0 10;
+      }
+      .buttons {
+         display: flex;
+         justify-content: center;
+         margin-top: 20px;
+      }
+      #button-add {
+         background-color: rgb(180, 120, 208);
+         border: rgb(190, 130, 218);
+         color:white;
+         border-radius: 10px;
+         font-size:20px;
+         padding:10px 25px;
+      }
+      #button-home {
+         background: rgba(255,255,255,0.3);
+         border: 1px rgba(0,0,0,0.5);
+         border-radius: 10px;
+         position: absolute;
+         top: 12px;
+         font-size:20px;
+         padding:10px;
+         left: 0;
+      }
+      #button-add:hover,#button-home:hover{
+         background-color: rgba(255,255,255,0.5);
+         color:rgb(180, 120, 208);
+      }
+      a{            
+         text-decoration: none;
+      }
+   </style>
+</head>
+<body>
+   <div class="head">
+      Add Expense
+   </div>
+   <main>
+      <div class="container">
+         <form action="insertquery.php" method="post">
+            <label for="name">Name:</label><br>
+            <input type="text" name="name" placeholder = "Your name..." id=""><br><br>
+            <label for="amount">Amount:</label><br>
+            <input type="number" name="amount" placeholder = "Money spent..." id=""><br>
+            <select name="category" id="">
+               <option value="" disabled selected hidden>Select category</option>
+               <option value="grocery">Grocery</option>
+               <option value="entertainment">Entertainment</option>
+               <option value="household">Household</option>
+               <option value="education">Education</option>
+               <option value="misc">Miscellaneous</option>
+               <option value="bills and subscription">Bills and Subscriptions</option>
+               <option value="food">Food</option>
+            </select><br><br> 
+            <div class="buttons">
+               <button type="submit" id="button-add">ADD</button>
+               <button type="submit" id="button-home"><a href="home.php">HOME</a></button>   
+            </div>
+         </form>
+      </div>
+   </main>
+</body>
+</html>
